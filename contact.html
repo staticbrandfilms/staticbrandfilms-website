@@ -55,14 +55,7 @@
   <section class="scene wrap">
     <div class="grid grid--2" style="align-items:start; gap:clamp(40px,6vw,90px);">
 
-      <!--
-        FORM SETUP NOTE (remove this comment before publishing):
-        This form posts to Formspree. Create a free account at
-        https://formspree.io, get your form endpoint, and replace
-        YOUR_FORM_ID below. Until then, the "Email us directly" link
-        on the right works without any setup.
-      -->
-      <form class="form" data-reveal action="https://formspree.io/f/mkoaqdqv" method="POST">
+      <form class="form" data-reveal id="contact-form">
         <div class="field">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -85,9 +78,40 @@
           <textarea id="message" name="message" placeholder="What are you building, who's it for, and when do you need it by?" required></textarea>
         </div>
         <div>
-          <button type="submit" class="btn">Send brief</button>
+          <button type="submit" class="btn" id="submit-btn">Send brief</button>
         </div>
+        <p id="form-success" style="display:none; margin-top:20px; color:var(--gold); font-family:var(--mono); font-size:0.85rem; letter-spacing:0.05em;">RECEIVED YOUR DETAILS — WE'LL BE IN TOUCH SOON.</p>
+        <p id="form-error" style="display:none; margin-top:20px; color:#e05c5c; font-family:var(--mono); font-size:0.85rem; letter-spacing:0.05em;">SOMETHING WENT WRONG — PLEASE EMAIL US DIRECTLY.</p>
       </form>
+
+      <script>
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const btn = document.getElementById('submit-btn');
+          btn.textContent = 'Sending…';
+          btn.disabled = true;
+          try {
+            const res = await fetch('https://formspree.io/f/mkoaqdqv', {
+              method: 'POST',
+              body: new FormData(this),
+              headers: { 'Accept': 'application/json' }
+            });
+            if (res.ok) {
+              this.reset();
+              document.getElementById('form-success').style.display = 'block';
+              btn.style.display = 'none';
+            } else {
+              document.getElementById('form-error').style.display = 'block';
+              btn.textContent = 'Send brief';
+              btn.disabled = false;
+            }
+          } catch {
+            document.getElementById('form-error').style.display = 'block';
+            btn.textContent = 'Send brief';
+            btn.disabled = false;
+          }
+        });
+      </script>
 
       <!-- DIRECT CONTACT -->
       <div data-reveal data-reveal-delay="1">
