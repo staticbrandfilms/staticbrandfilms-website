@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Static Brand Films</title>
+<meta name="description" content="Start a project with Static Brand Films — ad films, social media management and photography in Chennai.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="curtain">FADE IN —</div>
+
+<div class="hud">
+  <span class="hud__corner hud__corner--tl"></span>
+  <span class="hud__corner hud__corner--tr"></span>
+  <span class="hud__corner hud__corner--bl"></span>
+  <span class="hud__corner hud__corner--br"></span>
+  <div class="hud__top">
+    <span class="hud__rec"><span class="hud__rec-dot"></span> REC</span>
+    <span class="hud__tc" data-tc>00:00:00:00</span>
+    <span class="hud__meta">24FPS · CHENNAI, IN</span>
+  </div>
+  <div class="hud__bottom">
+    <span class="hud__scene">STATIC BRAND FILMS — CONTACT</span>
+    <span class="hud__meta">SLATE: NEW PROJECT</span>
+    <span class="hud__fstop" data-fstop>f/1.4</span>
+  </div>
+</div>
+
+<header class="nav">
+  <a href="index.html" class="nav__mark">STATIC<sup>BRAND FILMS</sup></a>
+  <button class="nav__toggle">MENU</button>
+  <nav class="nav__links">
+    <a href="index.html">Home</a>
+    <a href="work.html">Work</a>
+    <a href="photo-factory.html">Photo Factory</a>
+    <a href="about.html">Studio</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- INTRO -->
+  <section class="scene wrap" style="padding-top:clamp(150px,20vw,220px);">
+    <p class="scene__label" data-reveal>Scene — Get In Touch</p>
+    <div class="grid grid--2" style="align-items:end;">
+      <h1 class="h-1" data-reveal>Let's start<br>a project.</h1>
+      <p class="lede" data-reveal data-reveal-delay="1">Tell us what you're working on, what it's for, and any dates that matter. We'll come back with next steps — usually within a couple of days.</p>
+    </div>
+  </section>
+
+  <!-- FORM + DETAILS -->
+  <section class="scene wrap">
+    <div class="grid grid--2" style="align-items:start; gap:clamp(40px,6vw,90px);">
+
+      <!--
+        FORM SETUP NOTE (remove this comment before publishing):
+        This form posts to Formspree. Create a free account at
+        https://formspree.io, get your form endpoint, and replace
+        YOUR_FORM_ID below. Until then, the "Email us directly" link
+        on the right works without any setup.
+      -->
+      <form class="form" data-reveal action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@company.com" required>
+        </div>
+        <div class="field">
+          <label for="project">Project type</label>
+          <select id="project" name="project">
+            <option>Ad Film / Brand Film</option>
+            <option>Social Media Management</option>
+            <option>Static Photo Factory — Photography</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Tell us about it</label>
+          <textarea id="message" name="message" placeholder="What are you building, who's it for, and when do you need it by?" required></textarea>
+        </div>
+        <div>
+          <button type="submit" class="btn">Send brief</button>
+        </div>
+      </form>
+
+      <!-- DIRECT CONTACT -->
+      <div data-reveal data-reveal-delay="1">
+        <div class="contact-card">
+          <h4>Direct</h4>
+          <a href="mailto:hello@staticbrandfilms.in" class="big-link">hello@staticbrandfilms.in</a>
+          <div class="meta-row"><span>Studio</span><span>Chennai, Tamil Nadu, IN</span></div>
+          <div class="meta-row"><span>Response time</span><span>1–2 business days</span></div>
+          <div class="meta-row"><span>Currently taking</span><span>Films · Social · Photo</span></div>
+        </div>
+
+        <div style="margin-top:32px;">
+          <p class="mono-tag" style="margin-bottom:14px;">On Instagram</p>
+          <p style="margin-bottom:10px;"><a href="https://instagram.com" target="_blank" rel="noopener" class="link-arrow"><span class="link-arrow__bar"></span> Static Brand Films</a></p>
+          <p><a href="https://instagram.com" target="_blank" rel="noopener" class="link-arrow"><span class="link-arrow__bar"></span> Static Photo Factory</a></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHAT HAPPENS NEXT -->
+  <section class="scene wrap">
+    <p class="scene__label" data-reveal>Scene — What Happens Next</p>
+    <div class="filmstrip">
+      <div class="reel" data-reveal>
+        <span class="reel__index">01</span>
+        <span class="reel__title">We read your brief</span>
+        <span class="reel__meta"><span>Within 1–2 days</span></span>
+      </div>
+      <div class="reel" data-reveal data-reveal-delay="1">
+        <span class="reel__index">02</span>
+        <span class="reel__title">A short call or message thread</span>
+        <span class="reel__meta"><span>To nail the brief</span></span>
+      </div>
+      <div class="reel" data-reveal data-reveal-delay="2">
+        <span class="reel__index">03</span>
+        <span class="reel__title">A treatment &amp; quote</span>
+        <span class="reel__meta"><span>Scope, timeline, cost</span></span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer wrap">
+  <div class="footer__top">
+    <h2 class="h-1" style="max-width:14ch;">Static<br>Brand Films</h2>
+    <p class="mono-tag">CUT —<br>CHENNAI, INDIA</p>
+  </div>
+  <div class="footer__cols">
+    <div class="footer__col">
+      <h4>Studio</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="work.html">Work</a>
+      <a href="photo-factory.html">Photo Factory</a>
+    </div>
+    <div class="footer__col">
+      <h4>Connect</h4>
+      <a href="mailto:hello@staticbrandfilms.in">hello@staticbrandfilms.in</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram — Brand Films</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram — Photo Factory</a>
+    </div>
+    <div class="footer__col">
+      <h4>Studio Notes</h4>
+      <p>Sony A7V · Sigma 24–70mm f/2.8</p>
+      <p>DJI RS5 · DJI Mic Mini 2</p>
+      <p>ARRI Academy Certified</p>
+    </div>
+  </div>
+  <div class="footer__base">
+    <span>© 2026 Static Brand Films — Chennai, India</span>
+    <span>Every frame, directed.</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
