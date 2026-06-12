@@ -286,6 +286,7 @@ body::before{
 .btn{
   display:inline-flex; align-items:center; gap:12px;
   padding:16px 30px;
+  background:transparent;
   border:1px solid var(--line-strong);
   border-radius:999px;
   font-family:var(--f-mono);
