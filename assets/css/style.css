@@ -554,6 +554,49 @@ body::before{
 [data-reveal-delay="3"]{ transition-delay:.24s; }
 [data-reveal-delay="4"]{ transition-delay:.32s; }
 
+/* ============================================================
+   MOBILE OPTIMISATION (≤ 640px)
+   ============================================================ */
+@media (max-width: 640px){
+  /* wider gutter so italic glyphs don't clip the edge */
+  :root{ --gutter: 24px; }
+
+  /* reduce oversized headings */
+  .h-hero{ font-size: clamp(36px, 10vw, 48px); }
+  .h-1   { font-size: clamp(26px, 7vw,  34px); }
+  .h-2   { font-size: clamp(20px, 6vw,  28px); }
+
+  /* prevent italic overhang from clipping */
+  .h-hero, .h-1, .h-2{ overflow-wrap: break-word; padding-left: 2px; }
+
+  /* let body text fill the column */
+  .lede      { max-width: 100%; font-size: 17px; }
+  .body-text { max-width: 100%; }
+
+  /* tighten hero top padding */
+  .hero{ padding-top: 100px; }
+  .hero__sub{ margin-top: 24px; }
+  .hero__meta{ margin-top: 40px; gap: 16px; }
+
+  /* scenes — less vertical breathing room on small screens */
+  .scene{ padding: clamp(56px, 12vw, 80px) 0; }
+
+  /* stack footer columns */
+  .footer__cols{ flex-direction: column; gap: 32px; }
+  .footer__top { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .footer__base{ flex-direction: column; gap: 6px; }
+  .footer{ padding-bottom: 80px; }
+
+  /* contact card email link — prevent overflow */
+  .contact-card .big-link{ font-size: 18px; word-break: break-all; }
+
+  /* buttons — full width on very small screens */
+  .btn{ width: 100%; justify-content: center; }
+
+  /* profile / frame — constrain height on mobile */
+  .frame--tall{ aspect-ratio: 3/4; }
+}
+
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   [data-reveal]{ opacity:1; transform:none; filter:none; transition:none; }
