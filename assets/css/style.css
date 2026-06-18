@@ -136,13 +136,13 @@ body::before{
 .hud__fstop{ color:var(--teal); }
 
 @media (max-width: 720px){
-  .hud__corner{ width:14px; height:14px; }
-  .hud__corner--tl, .hud__corner--tr{ top:10px; }
-  .hud__corner--bl, .hud__corner--br{ bottom:10px; }
-  .hud__corner--tl, .hud__corner--bl{ left:10px; }
-  .hud__corner--tr, .hud__corner--br{ right:10px; }
-  .hud__top, .hud__bottom{ left:32px; right:32px; font-size:9px; }
-  .hud__meta, .hud__scene{ display:none; }
+  /* hide the HUD bars on mobile — they clash with the nav */
+  .hud__top, .hud__bottom{ display:none; }
+  .hud__corner{ width:12px; height:12px; }
+  .hud__corner--tl, .hud__corner--tr{ top:8px; }
+  .hud__corner--bl, .hud__corner--br{ bottom:8px; }
+  .hud__corner--tl, .hud__corner--bl{ left:8px; }
+  .hud__corner--tr, .hud__corner--br{ right:8px; }
 }
 
 /* ============================================================
@@ -198,18 +198,30 @@ body::before{
 }
 
 @media (max-width: 760px){
-  .nav{ padding:22px var(--gutter) 0; }
+  .nav{
+    padding:18px var(--gutter);
+    mix-blend-mode:normal;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+  }
   .nav__links{
     position:fixed; inset:0;
     flex-direction:column; justify-content:center; align-items:center;
-    gap:28px; font-size:20px;
+    gap:32px; font-size:22px;
     background:var(--bg);
+    z-index:90;
     transform:translateY(-100%);
     transition:transform var(--dur-med) var(--ease);
     mix-blend-mode:normal;
   }
   .nav__links.is-open{ transform:translateY(0); }
-  .nav__toggle{ display:block; mix-blend-mode:difference; }
+  .nav__toggle{
+    display:block;
+    mix-blend-mode:normal;
+    color:var(--ink);
+    z-index:100;
+    position:relative;
+  }
 }
 
 /* ============================================================
@@ -558,43 +570,43 @@ body::before{
    MOBILE OPTIMISATION (≤ 640px)
    ============================================================ */
 @media (max-width: 640px){
-  /* wider gutter so italic glyphs don't clip the edge */
+  /* generous side gutters */
   :root{ --gutter: 24px; }
 
-  /* reduce oversized headings */
-  .h-hero{ font-size: clamp(36px, 10vw, 48px); }
-  .h-1   { font-size: clamp(26px, 7vw,  34px); }
-  .h-2   { font-size: clamp(20px, 6vw,  28px); }
+  /* headings — smaller and safe from edge */
+  .h-hero{ font-size: clamp(34px, 9vw, 46px); overflow-wrap: break-word; }
+  .h-1   { font-size: clamp(26px, 7vw, 34px); overflow-wrap: break-word; }
+  .h-2   { font-size: clamp(20px, 6vw, 28px); overflow-wrap: break-word; }
 
-  /* prevent italic overhang from clipping */
-  .h-hero, .h-1, .h-2{ overflow-wrap: break-word; padding-left: 2px; }
-
-  /* let body text fill the column */
-  .lede      { max-width: 100%; font-size: 17px; }
+  /* body text fills column */
+  .lede      { max-width: 100%; font-size: 16px; }
   .body-text { max-width: 100%; }
 
-  /* tighten hero top padding */
-  .hero{ padding-top: 100px; }
+  /* hero — account for solid nav height (~60px) */
+  .hero{ padding-top: 80px; }
   .hero__sub{ margin-top: 24px; }
-  .hero__meta{ margin-top: 40px; gap: 16px; }
+  .hero__meta{ margin-top: 40px; gap: 20px; }
 
-  /* scenes — less vertical breathing room on small screens */
-  .scene{ padding: clamp(56px, 12vw, 80px) 0; }
+  /* sections */
+  .scene{ padding: 56px 0; }
 
-  /* stack footer columns */
+  /* footer */
   .footer__cols{ flex-direction: column; gap: 32px; }
-  .footer__top { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .footer__top { flex-direction: column; align-items: flex-start; gap: 12px; }
   .footer__base{ flex-direction: column; gap: 6px; }
   .footer{ padding-bottom: 80px; }
 
-  /* contact card email link — prevent overflow */
-  .contact-card .big-link{ font-size: 18px; word-break: break-all; }
+  /* contact */
+  .contact-card .big-link{ font-size: 17px; word-break: break-all; }
 
-  /* buttons — full width on very small screens */
+  /* buttons full-width */
   .btn{ width: 100%; justify-content: center; }
 
-  /* profile / frame — constrain height on mobile */
+  /* frames */
   .frame--tall{ aspect-ratio: 3/4; }
+
+  /* eyebrow / scene label — wrap cleanly */
+  .scene__label{ font-size: 10px; gap: 10px; }
 }
 
 @media (prefers-reduced-motion: reduce){
