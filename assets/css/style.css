@@ -151,8 +151,17 @@ body::before{
 .nav{
   position:fixed; top:0; left:0; right:0; z-index:60;
   display:flex; justify-content:space-between; align-items:center;
-  padding:34px var(--gutter) 0;
-  mix-blend-mode:difference;
+  padding:28px var(--gutter);
+  background: transparent;
+  transition: background var(--dur-fast) var(--ease), backdrop-filter var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), padding var(--dur-fast) var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.nav.is-scrolled{
+  background: rgba(13,20,17,0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom-color: var(--line);
+  padding: 18px var(--gutter);
 }
 .nav__mark{
   font-family:var(--f-display);
@@ -200,9 +209,13 @@ body::before{
 @media (max-width: 760px){
   .nav{
     padding:18px var(--gutter);
-    mix-blend-mode:normal;
-    background:var(--bg);
+    background: rgba(13,20,17,0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border-bottom:1px solid var(--line);
+  }
+  .nav.is-scrolled{
+    padding:18px var(--gutter);
   }
   .nav__links{
     position:fixed; inset:0;

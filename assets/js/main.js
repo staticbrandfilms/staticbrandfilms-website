@@ -59,6 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
     targets.forEach(t => t.classList.add('is-in'));
   }
 
+  /* ---------- nav scroll backdrop ---------- */
+  const nav = document.querySelector('.nav');
+  if (nav) {
+    const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
   /* ---------- mobile nav ---------- */
   const toggle = document.querySelector('.nav__toggle');
   const links = document.querySelector('.nav__links');
