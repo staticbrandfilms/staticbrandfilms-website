@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#0D1411"/>
+  <!-- Viewfinder corner brackets -->
+  <path d="M3 3 h5 M3 3 v5" stroke="#E8A356" stroke-width="1.5" fill="none" stroke-linecap="square"/>
+  <path d="M29 3 h-5 M29 3 v5" stroke="#E8A356" stroke-width="1.5" fill="none" stroke-linecap="square"/>
+  <path d="M3 29 h5 M3 29 v-5" stroke="#E8A356" stroke-width="1.5" fill="none" stroke-linecap="square"/>
+  <path d="M29 29 h-5 M29 29 v-5" stroke="#E8A356" stroke-width="1.5" fill="none" stroke-linecap="square"/>
+  <!-- S lettermark -->
+  <text x="16" y="22" font-family="Georgia, serif" font-style="italic" font-size="18" fill="#F4EEE2" text-anchor="middle" font-weight="400">S</text>
+</svg>
