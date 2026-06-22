@@ -116,6 +116,10 @@ body::before{
 .hud__top{ top:18px; }
 .hud__bottom{ bottom:18px; }
 
+/* top-right corner and its meta text sit behind the CLIENT PORTAL nav button */
+.hud__corner--tr{ display:none; }
+.hud__top .hud__meta{ display:none; }
+
 .hud__rec{
   display:inline-flex; align-items:center; gap:8px;
   color:var(--gold-text);
