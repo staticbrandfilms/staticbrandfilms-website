@@ -664,6 +664,89 @@ body::before{
   .frame img, .frame video{ transition:none; }
 }
 
+/* ============================================================
+   GALLERY / PORTFOLIO LAYOUTS
+   ============================================================ */
+
+/* Featured: large left + stacked right */
+.gallery-featured{
+  display:grid;
+  grid-template-columns:3fr 2fr;
+  gap:var(--gutter);
+}
+.gallery-featured__aside{
+  display:flex; flex-direction:column; gap:var(--gutter);
+}
+
+/* 3-col portrait strip */
+.gallery-strip{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:var(--gutter);
+  margin-top:var(--gutter);
+}
+
+/* Masonry-ish editorial: 2 tall cols + 1 spanning col */
+.gallery-editorial{
+  display:grid;
+  grid-template-columns:1fr 1fr 1.4fr;
+  grid-template-rows:auto auto;
+  gap:var(--gutter);
+}
+.gallery-editorial .span-rows{
+  grid-column:3;
+  grid-row:1 / 3;
+}
+
+/* 2-col pair */
+.gallery-duo{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:var(--gutter);
+}
+
+/* Empty placeholder frame — dark cinema screen waiting for content */
+.frame--empty{
+  background: #0a2e40;
+  border-color: transparent;
+}
+
+/* Placeholder label inside empty frame */
+.frame__placeholder{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:14px;
+}
+.frame__placeholder::before{
+  content:'';
+  width:28px; height:28px;
+  border:1px solid rgba(250,245,234,.2);
+  border-radius:50%;
+}
+.frame__placeholder span{
+  font-family:var(--f-mono); font-size:10px;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:rgba(250,245,234,.35);
+}
+
+@media (max-width: 860px){
+  .gallery-featured{ grid-template-columns:1fr; }
+  .gallery-featured__aside{ flex-direction:row; }
+  .gallery-editorial{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto auto auto;
+  }
+  .gallery-editorial .span-rows{ grid-column:1 / 3; grid-row:auto; }
+}
+@media (max-width: 640px){
+  .gallery-strip{ grid-template-columns:1fr 1fr; }
+  .gallery-featured__aside{ flex-direction:column; }
+  .gallery-duo{ grid-template-columns:1fr; }
+}
+@media (max-width: 420px){
+  .gallery-strip{ grid-template-columns:1fr; }
+}
+
 /* ---------- page curtain ---------- */
 .curtain{
   position:fixed; inset:0; z-index:200;
