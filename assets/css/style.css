@@ -238,7 +238,12 @@ body::before{
   }
   .nav.is-scrolled{ padding:18px var(--gutter); }
   .nav__links{
-    position:fixed; inset:0;
+    /* explicit dimensions fix the flex-child height collapse bug */
+    position:fixed;
+    top:0; left:0; right:0;
+    height:100vh;
+    height:100dvh; /* dynamic viewport — avoids mobile browser chrome */
+    width:100vw;
     flex-direction:column; justify-content:center; align-items:center;
     gap:36px; font-size:20px;
     background:var(--bg);
@@ -249,6 +254,7 @@ body::before{
   .nav__links.is-open{ transform:translateY(0); }
   .nav__toggle{
     display:block; color:var(--ink); z-index:100; position:relative;
+    min-height:44px; display:flex; align-items:center;
   }
 }
 
@@ -641,24 +647,66 @@ body::before{
    MOBILE (≤ 640px)
    ============================================================ */
 @media (max-width: 640px){
-  :root{ --gutter: 24px; }
+  :root{ --gutter: 20px; }
+
+  /* --- type --- */
   .h-hero{ font-size:clamp(34px, 9vw, 46px); overflow-wrap:break-word; }
   .h-1   { font-size:clamp(26px, 7vw, 34px); overflow-wrap:break-word; }
   .h-2   { font-size:clamp(20px, 6vw, 28px); overflow-wrap:break-word; }
   .lede  { max-width:100%; font-size:16px; }
   .body-text{ max-width:100%; }
-  .hero{ padding-top:80px; }
+  .scene__label{ font-size:10px; gap:8px; letter-spacing:.14em; }
+
+  /* --- hero --- */
+  .hero{ padding-top:80px; min-height:100svh; }
+  .hero__frame{ display:none; } /* decorative border clutters mobile */
   .hero__sub{ margin-top:24px; }
-  .hero__meta{ margin-top:40px; gap:20px; }
-  .scene{ padding:56px 0; }
-  .footer__cols{ flex-direction:column; gap:32px; }
-  .footer__top{ flex-direction:column; align-items:flex-start; gap:12px; }
-  .footer__base{ flex-direction:column; gap:6px; }
-  .footer{ padding-bottom:80px; }
-  .contact-card .big-link{ font-size:16px; word-break:break-all; }
-  .btn{ width:100%; justify-content:center; }
+  .hero__sub > div{ flex-direction:column !important; gap:12px !important; }
+  .hero__meta{ margin-top:40px; gap:16px; }
+  .hero__meta > div{ min-width:40%; }
+
+  /* --- sections --- */
+  .scene{ padding:52px 0; }
+  /* override inline padding-top on inner-page first scenes */
+  .scene[style]{ padding-top:clamp(100px,28vw,130px) !important; }
+
+  /* --- buttons --- */
+  .btn{ width:100%; justify-content:center; padding:14px 24px; }
+
+  /* --- cards --- */
+  .card{ padding:24px; }
+
+  /* --- frames --- */
   .frame--tall{ aspect-ratio:3/4; }
-  .scene__label{ font-size:10px; gap:10px; }
+  .frame--wide{ aspect-ratio:16/9; } /* ultrawide too cramped on mobile */
+
+  /* --- gallery --- */
+  .gallery-editorial{
+    grid-template-columns:1fr;
+    grid-template-rows:auto;
+  }
+  .gallery-editorial .span-rows{ grid-column:1; grid-row:auto; }
+  .gallery-featured__aside{ flex-direction:column; }
+  .gallery-duo{ grid-template-columns:1fr; }
+
+  /* --- filmstrip --- */
+  .reel{ padding:18px 0; }
+  .reel__title{ font-size:18px; }
+
+  /* --- contact --- */
+  .contact-card .big-link{ font-size:16px; word-break:break-all; }
+  .contact-card .meta-row{ flex-direction:column; gap:2px; }
+
+  /* --- footer --- */
+  .footer{ padding-bottom:60px; }
+  .footer__cols{ flex-direction:column; gap:28px; }
+  .footer__top{ flex-direction:column; align-items:flex-start; gap:10px; }
+  .footer__base{ flex-direction:column; gap:6px; margin-top:40px; }
+}
+
+/* portrait phones — gallery strip to single col */
+@media (max-width: 480px){
+  .gallery-strip{ grid-template-columns:1fr; }
 }
 
 @media (prefers-reduced-motion: reduce){
