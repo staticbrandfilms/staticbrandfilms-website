@@ -171,27 +171,32 @@ body::before{
   padding:16px var(--gutter);
 }
 .nav__mark{
+  display:flex; align-items:baseline; gap:8px;
   font-family:var(--f-display);
   font-style:italic;
   font-size:22px;
   letter-spacing:.02em;
-  color:var(--teal);
+  color:var(--ink);
 }
-.nav__mark sup{
+.nav__mark em{
+  font-style:italic;
+}
+.nav__mark span{
   font-family:var(--f-mono);
   font-style:normal;
-  font-size:10px;
+  font-size:11px;
+  letter-spacing:.22em;
   color:var(--gold-text);
-  vertical-align:super;
-  margin-left:6px;
+  vertical-align:baseline;
+  text-transform:uppercase;
 }
 .nav__links{
   display:flex; gap:clamp(18px, 3vw, 40px);
   font-family:var(--f-mono);
   font-size:12px;
-  letter-spacing:.12em;
+  letter-spacing:.14em;
   text-transform:uppercase;
-  color:var(--ink);
+  color:var(--ink-faint);
 }
 .nav__links a{
   position:relative;
@@ -203,11 +208,13 @@ body::before{
   position:absolute; left:0; bottom:0;
   width:0; height:1px;
   background:var(--gold-text);
+  height:2px;
   transition:width var(--dur-fast) var(--ease);
 }
+.nav__links a:hover{ color:var(--ink); }
 .nav__links a:hover::after,
 .nav__links a[aria-current="page"]::after{ width:100%; }
-.nav__links a[aria-current="page"]{ color:var(--teal); font-weight:600; }
+.nav__links a[aria-current="page"]{ color:var(--ink); font-weight:600; }
 .nav__portal{
   border:1.5px solid var(--teal) !important;
   color:var(--teal) !important;
