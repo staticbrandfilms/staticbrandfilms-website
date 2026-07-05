@@ -46,22 +46,98 @@
 
   <!-- HERO -->
   <section class="hero wrap">
-    <div class="hero__frame" aria-hidden="true"></div>
-    <p class="eyebrow hero__eyebrow" data-reveal>SCENE 01 — STATIC BRAND FILMS, CHENNAI</p>
-    <h1 class="h-hero hero__title" data-reveal data-reveal-delay="1">We frame brands <em>like films.</em></h1>
-    <div class="hero__sub" data-reveal data-reveal-delay="2">
-      <p class="lede">A Chennai-based creative studio making ad films, social content and campaigns — directed with the eye of a cinematographer, not just produced for a feed.</p>
-      <div style="margin-top:32px; display:flex; gap:18px; flex-wrap:wrap;">
-        <a href="contact.html" class="btn">Start a project</a>
-        <a href="https://www.instagram.com/_staticbrandfilms_/" target="_blank" rel="noopener" class="btn btn--ghost">See our work</a>
+
+    <!-- Scene strip -->
+    <div class="hero__strip">
+      <div class="hero__strip-left">
+        <span class="hero__rec-dot"></span>
+        <span class="hero__rec-label">REC</span>
+        <span>Scene 01 — Showreel</span>
+      </div>
+      <span data-tc>00:00:00:00</span>
+    </div>
+
+    <!-- Two-column: text + cinematic frame -->
+    <div class="hero__two-col">
+
+      <!-- Left: text -->
+      <div class="hero__text">
+        <p class="eyebrow hero__eyebrow" data-reveal>Static Brand Films — Chennai</p>
+        <h1 class="h-hero hero__title" data-reveal data-reveal-delay="1">We frame<br>brands <em>like films.</em></h1>
+        <div class="hero__sub" data-reveal data-reveal-delay="2">
+          <p class="lede">A director-led studio making ad films, reels and campaign stills — scripted, lit and graded with a film set's discipline.</p>
+          <div class="hero__cta">
+            <a href="contact.html" class="btn">Start a project</a>
+            <a href="https://www.instagram.com/_staticbrandfilms_/" target="_blank" rel="noopener" class="btn btn--ghost">See our work</a>
+          </div>
+        </div>
+        <div class="hero__meta" data-reveal data-reveal-delay="3">
+          <div><b>Director</b>Akil Vijay</div>
+          <div><b>Based</b>Chennai, India</div>
+          <div><b>Format</b>16:9 · 4K</div>
+        </div>
+      </div>
+
+      <!-- Right: cinematic still frame -->
+      <div class="hero__cinematic" data-reveal data-reveal-delay="1">
+        <div class="hero__film-frame">
+          <!-- Crop marks -->
+          <span class="crop-mark crop-mark--tl"></span>
+          <span class="crop-mark crop-mark--tr"></span>
+          <span class="crop-mark crop-mark--bl"></span>
+          <span class="crop-mark crop-mark--br"></span>
+          <!-- Slate — top -->
+          <div class="hero__slate hero__slate--top">
+            <span>CAM A · 35MM</span><span>F/1.4</span>
+          </div>
+          <!-- Image placeholder (replace with real <img> when ready) -->
+          <div class="frame frame--empty">
+            <div class="frame__placeholder"><span>Drop your hero still here</span></div>
+          </div>
+          <!-- Slate — bottom -->
+          <div class="hero__slate hero__slate--bottom">
+            <span>RESTAURANT BRAND — AD FILM</span><span>00:24 / 01:40</span>
+          </div>
+        </div>
+        <div class="hero__take">Take 01</div>
+      </div>
+
+    </div>
+
+    <!-- Filmstrip reel selector -->
+    <div class="hero__reel" data-reveal data-reveal-delay="2">
+      <div class="hero__reel-header">
+        <span>Reel — Selected Work</span>
+        <span>04 / 12</span>
+      </div>
+      <div class="hero__reel-strip">
+        <div class="hero__reel-cell">
+          <div class="frame frame--empty">
+            <div class="frame__placeholder"><span>Still 01</span></div>
+          </div>
+          <div class="hero__reel-label">01 · Food &amp; Beverage</div>
+        </div>
+        <div class="hero__reel-cell">
+          <div class="frame frame--empty">
+            <div class="frame__placeholder"><span>Still 02</span></div>
+          </div>
+          <div class="hero__reel-label">02 · Social Reel</div>
+        </div>
+        <div class="hero__reel-cell">
+          <div class="frame frame--empty">
+            <div class="frame__placeholder"><span>Still 03</span></div>
+          </div>
+          <div class="hero__reel-label">03 · Campaign Stills</div>
+        </div>
+        <div class="hero__reel-cell">
+          <div class="frame frame--empty">
+            <div class="frame__placeholder"><span>Still 04</span></div>
+          </div>
+          <div class="hero__reel-label">04 · Wedding Film</div>
+        </div>
       </div>
     </div>
-    <div class="hero__meta" data-reveal data-reveal-delay="3">
-      <div><b>Director</b>Akil Vijay</div>
-      <div><b>Based</b>Chennai, India</div>
-      <div><b>Format</b>Ad Films / Social / Photo</div>
-      <div><b>Roll</b>STATIC&nbsp;—&nbsp;2026</div>
-    </div>
+
   </section>
 
   <!-- WHAT WE DO -->
@@ -69,29 +145,45 @@
     <p class="scene__label" data-reveal>Scene 02 — What We Make</p>
     <div class="shot-list">
       <div class="shot" data-reveal>
-        <span class="shot__index">01 — Film</span>
+        <span class="shot__index">01</span>
         <div>
-          <h3 class="shot__title">Ad Films &amp; Brand Films</h3>
-          <p class="shot__desc">Short-form ad films built like scenes — lighting, blocking and sound designed to hold attention from the first frame to the last.</p>
+          <h3 class="shot__title">Brand Films</h3>
+          <p class="shot__desc">Ad films and brand stories — scripted and directed end to end.</p>
         </div>
-        <span class="shot__arrow">→</span>
+        <span class="shot__spec">Motion · 30–90s · 4K</span>
+        <span class="shot__arrow">↗</span>
       </div>
       <div class="shot" data-reveal data-reveal-delay="1">
-        <span class="shot__index">02 — Feed</span>
+        <span class="shot__index">02</span>
         <div>
-          <h3 class="shot__title">Social Media Management</h3>
-          <p class="shot__desc">Content calendars, reels and pages run with the same eye for pacing and visual identity as our films — consistent, watchable, on-brand.</p>
+          <h3 class="shot__title">Social Content</h3>
+          <p class="shot__desc">Reels and short-form, cut for pace and made to travel.</p>
         </div>
-        <span class="shot__arrow">→</span>
+        <span class="shot__spec">Social · 9:16 · Sets of 3–6</span>
+        <span class="shot__arrow">↗</span>
       </div>
       <div class="shot" data-reveal data-reveal-delay="2">
-        <span class="shot__index">03 — Story</span>
+        <span class="shot__index">03</span>
         <div>
-          <h3 class="shot__title">Concept &amp; Direction</h3>
-          <p class="shot__desc">From a one-line brief to a full shot list — story, script and on-set direction for brands who want their content to feel intentional.</p>
+          <h3 class="shot__title"><a href="photo-factory.html" style="color:inherit;text-decoration:none;">Photo Factory</a></h3>
+          <p class="shot__desc">Lookbooks, portraits and campaign stills — same eye, stills instead of motion.</p>
         </div>
-        <span class="shot__arrow">→</span>
+        <span class="shot__spec">Stills · Campaign · Editorial</span>
+        <span class="shot__arrow">↗</span>
       </div>
+      <div class="shot" data-reveal data-reveal-delay="3">
+        <span class="shot__index">04</span>
+        <div>
+          <h3 class="shot__title"><a href="weddings.html" style="color:inherit;text-decoration:none;">Weddings</a></h3>
+          <p class="shot__desc">Films for people who want their day shot like cinema.</p>
+        </div>
+        <span class="shot__spec">Film · 1–2 Days · Feature Cut</span>
+        <span class="shot__arrow">↗</span>
+      </div>
+    </div>
+    <div class="shot-footer">
+      <span>Static Brand Films — Services</span>
+      <span class="shot-footer__accent">F/1.4</span>
     </div>
   </section>
 

@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------- live timecode, 24fps ---------- */
-  const tc = document.querySelector('[data-tc]');
-  if (tc) {
+  const tcEls = document.querySelectorAll('[data-tc]');
+  if (tcEls.length) {
     const FPS = 24;
     const tick = () => {
       const now = new Date();
@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const m = String(now.getMinutes()).padStart(2,'0');
       const s = String(now.getSeconds()).padStart(2,'0');
       const f = String(Math.floor((now.getMilliseconds()/1000)*FPS)).padStart(2,'0');
-      tc.textContent = `${h}:${m}:${s}:${f}`;
+      const val = `${h}:${m}:${s}:${f}`;
+      tcEls.forEach(el => el.textContent = val);
     };
     tick();
     setInterval(tick, 1000/FPS);
