@@ -97,6 +97,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- reel strip drag-to-scroll ---------- */
+  const strip = document.getElementById('reel-strip');
+  if (strip) {
+    let isDown = false, startX, scrollLeft;
+    strip.addEventListener('mousedown', e => {
+      isDown = true; strip.classList.add('is-dragging');
+      startX = e.pageX - strip.offsetLeft; scrollLeft = strip.scrollLeft;
+    });
+    strip.addEventListener('mouseleave', () => { isDown = false; strip.classList.remove('is-dragging'); });
+    strip.addEventListener('mouseup', () => { isDown = false; strip.classList.remove('is-dragging'); });
+    strip.addEventListener('mousemove', e => {
+      if (!isDown) return; e.preventDefault();
+      strip.scrollLeft = scrollLeft - (e.pageX - strip.offsetLeft - startX);
+    });
+  }
+
   /* ---------- work page filters ---------- */
   const filterBtns = document.querySelectorAll('[data-filter]');
   const reels = document.querySelectorAll('[data-category]');
