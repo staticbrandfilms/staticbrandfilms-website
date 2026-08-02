@@ -87,6 +87,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
+  <!-- FEATURED FILMS -->
+  <section class="scene wrap" aria-labelledby="featured-films-title">
+    <p class="scene__label" data-reveal>Scene — Recent Films</p>
+    <div class="video-intro" data-reveal>
+      <h2 class="h-2" id="featured-films-title">Watch the work.</h2>
+      <p class="body-text">A selection of recent brand films and social-first edits. Press play to watch here — no redirects, no reel dump.</p>
+    </div>
+    <div class="video-showcase" data-reveal>
+      <button class="video-card video-card--feature" type="button" data-video-id="ECNgW6ZK6y0" data-video-title="Featured Brand Film" aria-label="Play Featured Brand Film">
+        <img src="https://i.ytimg.com/vi/ECNgW6ZK6y0/maxresdefault.jpg" alt="Still from Featured Brand Film" loading="lazy">
+        <span class="video-card__shade"></span>
+        <span class="video-card__play" aria-hidden="true">▶</span>
+        <span class="video-card__label"><strong>Featured Brand Film</strong><small>Watch film · YouTube</small></span>
+      </button>
+      <div class="video-reels">
+        <button class="video-card video-card--reel" type="button" data-video-id="Tl46I3PNvvo" data-video-title="Recent Work — Reel 01" aria-label="Play Recent Work Reel 01"><img src="https://i.ytimg.com/vi/Tl46I3PNvvo/hqdefault.jpg" alt="Still from Recent Work Reel 01" loading="lazy"><span class="video-card__shade"></span><span class="video-card__play" aria-hidden="true">▶</span><span class="video-card__label"><strong>Reel 01</strong><small>Social film</small></span></button>
+        <button class="video-card video-card--reel" type="button" data-video-id="E3-LU8VkHMQ" data-video-title="Recent Work — Reel 02" aria-label="Play Recent Work Reel 02"><img src="https://i.ytimg.com/vi/E3-LU8VkHMQ/hqdefault.jpg" alt="Still from Recent Work Reel 02" loading="lazy"><span class="video-card__shade"></span><span class="video-card__play" aria-hidden="true">▶</span><span class="video-card__label"><strong>Reel 02</strong><small>Social film</small></span></button>
+        <button class="video-card video-card--reel" type="button" data-video-id="UHXQef-jZpI" data-video-title="Recent Work — Reel 03" aria-label="Play Recent Work Reel 03"><img src="https://i.ytimg.com/vi/UHXQef-jZpI/hqdefault.jpg" alt="Still from Recent Work Reel 03" loading="lazy"><span class="video-card__shade"></span><span class="video-card__play" aria-hidden="true">▶</span><span class="video-card__label"><strong>Reel 03</strong><small>Social film</small></span></button>
+        <button class="video-card video-card--reel" type="button" data-video-id="EPaqwVmZV5Y" data-video-title="Recent Work — Reel 04" aria-label="Play Recent Work Reel 04"><img src="https://i.ytimg.com/vi/EPaqwVmZV5Y/hqdefault.jpg" alt="Still from Recent Work Reel 04" loading="lazy"><span class="video-card__shade"></span><span class="video-card__play" aria-hidden="true">▶</span><span class="video-card__label"><strong>Reel 04</strong><small>Social film</small></span></button>
+        <button class="video-card video-card--reel" type="button" data-video-id="g4ln4g5EH5Q" data-video-title="Recent Work — Reel 05" aria-label="Play Recent Work Reel 05"><img src="https://i.ytimg.com/vi/g4ln4g5EH5Q/hqdefault.jpg" alt="Still from Recent Work Reel 05" loading="lazy"><span class="video-card__shade"></span><span class="video-card__play" aria-hidden="true">▶</span><span class="video-card__label"><strong>Reel 05</strong><small>Social film</small></span></button>
+        <button class="video-card video-card--reel" type="button" data-video-id="zCxKZrxeu0Q" data-video-title="Recent Work — Reel 06" aria-label="Play Recent Work Reel 06"><img src="https://i.ytimg.com/vi/zCxKZrxeu0Q/hqdefault.jpg" alt="Still from Recent Work Reel 06" loading="lazy"><span class="video-card__shade"></span><span class="video-card__play" aria-hidden="true">▶</span><span class="video-card__label"><strong>Reel 06</strong><small>Social film</small></span></button>
+      </div>
+    </div>
+  </section>
+
   <!-- FEATURED GALLERY -->
   <section class="scene wrap">
     <p class="scene__label" data-reveal>Scene — Selected Work</p>
@@ -277,6 +302,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
 </main>
+<div class="video-modal" id="video-modal" hidden role="dialog" aria-modal="true" aria-labelledby="video-modal-title">
+  <div class="video-modal__backdrop" data-video-close></div>
+  <div class="video-modal__panel">
+    <div class="video-modal__top"><p id="video-modal-title">Featured film</p><button class="video-modal__close" type="button" data-video-close aria-label="Close video">Close ×</button></div>
+    <div class="video-modal__player"></div>
+  </div>
+</div>
 <footer class="footer">
 <div class="wrap">
   <div class="footer__top">

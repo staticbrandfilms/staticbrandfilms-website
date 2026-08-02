@@ -84,6 +84,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
   }
 
+  /* ---------- YouTube video lightbox ---------- */
+  const videoModal = document.getElementById('video-modal');
+  const videoPlayer = videoModal?.querySelector('.video-modal__player');
+  const videoTitle = document.getElementById('video-modal-title');
+  const closeVideo = () => {
+    if (!videoModal || !videoPlayer) return;
+    videoPlayer.replaceChildren();
+    videoModal.hidden = true;
+    document.body.style.overflow = '';
+  };
+  document.querySelectorAll('[data-video-id]').forEach(card => card.addEventListener('click', () => {
+    if (!videoModal || !videoPlayer) return;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${card.dataset.videoId}?autoplay=1&rel=0`;
+    iframe.title = card.dataset.videoTitle || 'Static Brand Films video';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    videoPlayer.replaceChildren(iframe);
+    if (videoTitle) videoTitle.textContent = card.dataset.videoTitle || 'Featured film';
+    videoModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }));
+  videoModal?.querySelectorAll('[data-video-close]').forEach(el => el.addEventListener('click', closeVideo));
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && videoModal && !videoModal.hidden) closeVideo(); });
+
   /* ---------- magnetic hover on primary buttons (desktop only) ---------- */
   if (window.matchMedia('(hover: hover)').matches) {
     document.querySelectorAll('.btn').forEach(btn => {

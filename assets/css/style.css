@@ -645,6 +645,52 @@ body::before{
 }
 
 /* ============================================================
+   VIDEO SHOWCASE — YouTube stays inside the site
+   ============================================================ */
+.video-intro{
+  display:grid; grid-template-columns:1fr 1fr; gap:var(--gutter);
+  align-items:end; margin-bottom:clamp(28px,4vw,48px);
+}
+.video-showcase{ display:grid; grid-template-columns:1.25fr 1fr; gap:var(--gutter); }
+.video-reels{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; align-content:start; }
+.video-card{
+  position:relative; overflow:hidden; padding:0; border:1px solid var(--line);
+  background:var(--teal); color:#fff; text-align:left; cursor:pointer;
+  isolation:isolate; transition:transform var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+}
+.video-card--feature{ aspect-ratio:16/10; }
+.video-card--reel{ aspect-ratio:9/14; }
+.video-card img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .8s var(--ease); }
+.video-card__shade{ position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,rgba(5,40,57,.04) 25%,rgba(5,40,57,.84) 100%); }
+.video-card__play{
+  position:absolute; z-index:2; top:50%; left:50%; transform:translate(-50%,-50%);
+  display:grid; place-items:center; width:52px; height:52px; padding-left:3px;
+  border-radius:50%; background:var(--gold); color:var(--ink); font-size:16px;
+  transition:transform var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
+}
+.video-card__label{ position:absolute; z-index:2; right:16px; bottom:15px; left:16px; display:flex; flex-direction:column; gap:4px; }
+.video-card__label strong{ font-family:var(--f-heading); font-size:clamp(16px,2vw,24px); line-height:1.1; font-weight:600; }
+.video-card__label small{ font-family:var(--f-mono); font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:rgba(250,245,234,.75); }
+.video-card--reel .video-card__play{ width:38px; height:38px; font-size:12px; }
+.video-card--reel .video-card__label{ right:10px; bottom:10px; left:10px; }
+.video-card--reel .video-card__label strong{ font-size:12px; }
+.video-card--reel .video-card__label small{ font-size:8px; letter-spacing:.1em; }
+.video-card:hover{ border-color:var(--gold-text); transform:translateY(-4px); }
+.video-card:hover img{ transform:scale(1.06); }
+.video-card:hover .video-card__play{ transform:translate(-50%,-50%) scale(1.1); background:#fff; }
+.video-modal{ position:fixed; inset:0; z-index:300; display:grid; place-items:center; padding:24px; }
+.video-modal[hidden]{ display:none; }
+.video-modal__backdrop{ position:absolute; inset:0; background:rgba(5,40,57,.84); backdrop-filter:blur(8px); }
+.video-modal__panel{ position:relative; z-index:1; width:min(100%,1000px); }
+.video-modal__top{ display:flex; justify-content:space-between; align-items:center; padding-bottom:12px; color:#FAF5EA; }
+.video-modal__top p,.video-modal__close{ font-family:var(--f-mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; }
+.video-modal__close{ border:0; padding:8px 0; background:transparent; color:#FAF5EA; cursor:pointer; }
+.video-modal__player{ aspect-ratio:16/9; background:#000; }
+.video-modal__player iframe{ width:100%; height:100%; border:0; display:block; }
+@media (max-width:860px){ .video-showcase{ grid-template-columns:1fr; } .video-reels{ grid-template-columns:repeat(6,1fr); } }
+@media (max-width:640px){ .video-intro{ grid-template-columns:1fr; gap:16px; } .video-reels{ grid-template-columns:repeat(3,1fr); gap:10px; } .video-card__play{ width:46px; height:46px; } .video-modal{ padding:16px; } }
+
+/* ============================================================
    FILMSTRIP
    ============================================================ */
 .filmstrip{ display:flex; flex-direction:column; }
