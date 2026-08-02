@@ -171,24 +171,13 @@ body::before{
   padding:16px var(--gutter);
 }
 .nav__mark{
-  display:flex; align-items:baseline; gap:8px;
-  font-family:var(--f-display);
-  font-style:italic;
-  font-size:22px;
-  letter-spacing:.02em;
-  color:var(--ink);
+  display:flex; align-items:center;
+  flex-shrink:0;
 }
-.nav__mark em{
-  font-style:italic;
-}
-.nav__mark span{
-  font-family:var(--f-mono);
-  font-style:normal;
-  font-size:11px;
-  letter-spacing:.22em;
-  color:var(--gold-text);
-  vertical-align:baseline;
-  text-transform:uppercase;
+.nav__logo{
+  display:block;
+  width:126px;
+  height:auto;
 }
 .nav__links{
   display:flex; gap:clamp(18px, 3vw, 40px);
