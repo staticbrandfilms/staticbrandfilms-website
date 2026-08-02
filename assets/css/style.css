@@ -335,6 +335,10 @@ body::before{
   line-height:1.65;
 }
 .body-text{ color:var(--ink-dim); max-width:60ch; line-height:1.75; }
+.section-gist{
+  max-width:58ch; margin-top:calc(-1 * clamp(14px, 2.5vw, 30px));
+  margin-bottom:clamp(28px, 4vw, 48px); color:var(--ink-dim); line-height:1.7;
+}
 .mono-tag{
   font-family:var(--f-mono);
   font-size:11px;
