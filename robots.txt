@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://staticbrandfilms.in/sitemap.xml
+Sitemap: https://www.staticbrandfilms.in/sitemap.xml

@@ -1,39 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://staticbrandfilms.in/</loc>
-    <lastmod>2026-06-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://staticbrandfilms.in/about.html</loc>
-    <lastmod>2026-06-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://staticbrandfilms.in/work.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <loc>https://www.staticbrandfilms.in/</loc>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image><image:loc>https://www.staticbrandfilms.in/assets/images/home/static-brand-films-commercial-campaign-chennai.jpg</image:loc><image:title>Commercial campaign photography by Static Brand Films</image:title><image:caption>Director-led commercial photography for brands in Chennai and Coimbatore.</image:caption></image:image>
+    <image:image><image:loc>https://www.staticbrandfilms.in/assets/images/home/commercial-food-photography-chennai.jpg</image:loc><image:title>Commercial food photography in Chennai</image:title><image:caption>Food photography and campaign visuals by Static Brand Films.</image:caption></image:image>
+  </url>
+  <url>
+    <loc>https://www.staticbrandfilms.in/services.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://staticbrandfilms.in/photo-factory.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <loc>https://www.staticbrandfilms.in/brand-films.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.staticbrandfilms.in/assets/images/brand-films/meghna-grill-restaurant-campaign-chennai.jpg</image:loc><image:title>Meghna Grill restaurant campaign photography</image:title><image:caption>Commercial food and restaurant photography by Static Brand Films.</image:caption></image:image>
+    <image:image><image:loc>https://www.staticbrandfilms.in/assets/images/brand-films/beesticks-product-photography-chennai.jpg</image:loc><image:title>Beesticks product photography</image:title><image:caption>Commercial product photography for brand campaigns.</image:caption></image:image>
+  </url>
+  <url>
+    <loc>https://www.staticbrandfilms.in/photo-factory.html</loc>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image><image:loc>https://www.staticbrandfilms.in/assets/images/photo-factory/model-portfolio-photography-chennai.jpg</image:loc><image:title>Model portfolio photography in Chennai</image:title><image:caption>Fashion and model portfolio photography by Static Photo Factory.</image:caption></image:image>
+    <image:image><image:loc>https://www.staticbrandfilms.in/assets/images/photo-factory/fashion-editorial-photography-chennai.jpg</image:loc><image:title>Fashion editorial photography in Chennai</image:title><image:caption>Direction-first fashion editorial photography.</image:caption></image:image>
   </url>
-
-  <url>
-    <loc>https://staticbrandfilms.in/contact.html</loc>
-    <lastmod>2026-06-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
+  <url><loc>https://www.staticbrandfilms.in/about.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.staticbrandfilms.in/contact.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
