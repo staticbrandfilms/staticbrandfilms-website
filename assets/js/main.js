@@ -109,6 +109,60 @@ document.addEventListener('DOMContentLoaded', () => {
   videoModal?.querySelectorAll('[data-video-close]').forEach(el => el.addEventListener('click', closeVideo));
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && videoModal && !videoModal.hidden) closeVideo(); });
 
+  /* ---------- image galleries: natural-ratio masonry + lightbox ---------- */
+  document.querySelectorAll('.gallery-featured, .gallery-editorial, .gallery-strip').forEach(gallery => {
+    const aside = gallery.querySelector('.gallery-featured__aside');
+    if (aside) {
+      [...aside.children].forEach(frame => gallery.append(frame));
+      aside.remove();
+      gallery.classList.add('media-masonry--feature');
+    }
+    gallery.classList.add('media-masonry');
+  });
+
+  const stillFrames = [...document.querySelectorAll('main .frame')].filter(frame => frame.querySelector('img'));
+  if (stillFrames.length) {
+    const imageLightbox = document.createElement('div');
+    imageLightbox.className = 'image-lightbox';
+    imageLightbox.hidden = true;
+    imageLightbox.setAttribute('role', 'dialog');
+    imageLightbox.setAttribute('aria-modal', 'true');
+    imageLightbox.setAttribute('aria-label', 'Expanded image');
+    imageLightbox.innerHTML = '<div class="image-lightbox__backdrop" data-image-close></div><div class="image-lightbox__content"><button class="image-lightbox__close" type="button" data-image-close>Close ×</button><img class="image-lightbox__image" alt=""></div>';
+    document.body.append(imageLightbox);
+    const lightboxImage = imageLightbox.querySelector('.image-lightbox__image');
+    const lightboxClose = imageLightbox.querySelector('.image-lightbox__close');
+    let lastFrame = null;
+    const closeImage = () => {
+      imageLightbox.hidden = true;
+      lightboxImage.removeAttribute('src');
+      document.body.style.overflow = '';
+      lastFrame?.focus();
+    };
+    const openImage = frame => {
+      const image = frame.querySelector('img');
+      if (!image) return;
+      lastFrame = frame;
+      lightboxImage.src = image.currentSrc || image.src;
+      lightboxImage.alt = image.alt || 'Static Brand Films work';
+      imageLightbox.hidden = false;
+      document.body.style.overflow = 'hidden';
+      lightboxClose.focus();
+    };
+    stillFrames.forEach(frame => {
+      const image = frame.querySelector('img');
+      frame.tabIndex = 0;
+      frame.setAttribute('role', 'button');
+      frame.setAttribute('aria-label', `Open image: ${image?.alt || 'portfolio image'}`);
+      frame.addEventListener('click', () => openImage(frame));
+      frame.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openImage(frame); }
+      });
+    });
+    imageLightbox.querySelectorAll('[data-image-close]').forEach(el => el.addEventListener('click', closeImage));
+    document.addEventListener('keydown', event => { if (event.key === 'Escape' && !imageLightbox.hidden) closeImage(); });
+  }
+
   /* ---------- magnetic hover on primary buttons (desktop only) ---------- */
   if (window.matchMedia('(hover: hover)').matches) {
     document.querySelectorAll('.btn').forEach(btn => {
