@@ -500,6 +500,11 @@ body::before{
 }
 .hero__reel-strip::-webkit-scrollbar{ display:none; }
 .hero__reel-strip.is-dragging{ cursor:grabbing; user-select:none; }
+.hero__reel-strip--films{
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+  overflow:visible; cursor:default;
+}
+.hero__reel-strip--films .video-card{ aspect-ratio:16/9; }
 .hero__reel-cell{
   flex:0 0 220px; scroll-snap-align:start;
 }
@@ -512,6 +517,7 @@ body::before{
   font-family:var(--f-mono); font-size:10px; letter-spacing:.14em;
   text-transform:uppercase; color:var(--ink-faint);
 }
+@media (max-width:640px){ .hero__reel-strip--films{ grid-template-columns:1fr; } }
 
 /* ============================================================
    GRID / CARDS
