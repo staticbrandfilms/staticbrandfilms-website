@@ -660,6 +660,7 @@ body::before{
 }
 .video-card--feature{ aspect-ratio:16/10; }
 .video-card--reel{ aspect-ratio:9/14; }
+.video-card--wide{ grid-column:1 / -1; aspect-ratio:16/9; }
 .video-card img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .8s var(--ease); }
 .video-card__shade{ position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,rgba(5,40,57,.04) 25%,rgba(5,40,57,.84) 100%); }
 .video-card__play{
