@@ -651,8 +651,8 @@ body::before{
   display:grid; grid-template-columns:1fr 1fr; gap:var(--gutter);
   align-items:end; margin-bottom:clamp(28px,4vw,48px);
 }
-.video-showcase{ display:grid; grid-template-columns:1.25fr 1fr; gap:var(--gutter); }
-.video-reels{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; align-content:start; }
+.video-showcase{ display:grid; grid-template-columns:1fr 1fr; gap:var(--gutter); }
+.video-reels{ grid-column:1 / -1; display:grid; grid-template-columns:repeat(6,1fr); gap:14px; align-content:start; }
 .video-card{
   position:relative; overflow:hidden; padding:0; border:1px solid var(--line);
   background:var(--teal); color:#fff; text-align:left; cursor:pointer;
@@ -660,7 +660,7 @@ body::before{
 }
 .video-card--feature{ aspect-ratio:16/10; }
 .video-card--reel{ aspect-ratio:9/14; }
-.video-card--wide{ grid-column:1 / -1; aspect-ratio:16/9; }
+.video-card--wide{ aspect-ratio:16/9; }
 .video-card img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .8s var(--ease); }
 .video-card__shade{ position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,rgba(5,40,57,.04) 25%,rgba(5,40,57,.84) 100%); }
 .video-card__play{
@@ -688,7 +688,7 @@ body::before{
 .video-modal__close{ border:0; padding:8px 0; background:transparent; color:#FAF5EA; cursor:pointer; }
 .video-modal__player{ aspect-ratio:16/9; background:#000; }
 .video-modal__player iframe{ width:100%; height:100%; border:0; display:block; }
-@media (max-width:860px){ .video-showcase{ grid-template-columns:1fr; } .video-reels{ grid-template-columns:repeat(6,1fr); } }
+@media (max-width:860px){ .video-showcase{ grid-template-columns:1fr; } .video-reels{ grid-column:auto; grid-template-columns:repeat(6,1fr); } }
 @media (max-width:640px){ .video-intro{ grid-template-columns:1fr; gap:16px; } .video-reels{ grid-template-columns:repeat(3,1fr); gap:10px; } .video-card__play{ width:46px; height:46px; } .video-modal{ padding:16px; } }
 
 /* ============================================================
@@ -987,6 +987,14 @@ body::before{
   height:auto !important;
   object-fit:contain !important;
 }
+
+/* Purpose-built layouts for mixed landscape and portrait work */
+.bts-grid{ display:grid; gap:var(--gutter); }
+.bts-grid__portraits{ display:grid; grid-template-columns:1fr 1fr; gap:var(--gutter); }
+.bts-grid .frame,.campaign-grid .frame{ cursor:zoom-in; }
+.campaign-grid{ display:grid; grid-template-columns:1fr 1fr; gap:var(--gutter); align-items:start; }
+.campaign-grid__col{ display:flex; flex-direction:column; gap:var(--gutter); }
+@media (max-width:640px){ .bts-grid__portraits,.campaign-grid{ grid-template-columns:1fr; } }
 
 /* Image viewer */
 .frame[role="button"]{ cursor:zoom-in; }

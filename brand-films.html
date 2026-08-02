@@ -101,6 +101,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="video-card__play" aria-hidden="true">▶</span>
         <span class="video-card__label"><strong>Featured Brand Film</strong><small>Watch film · YouTube</small></span>
       </button>
+      <button class="video-card video-card--wide" type="button" data-video-id="R8l80o-fBfE" data-video-title="Social Media Film" aria-label="Play Social Media Film"><img src="https://i.ytimg.com/vi/R8l80o-fBfE/hqdefault.jpg" alt="Still from Social Media Film" loading="lazy"><span class="video-card__shade"></span><span class="video-card__play" aria-hidden="true">▶</span><span class="video-card__label"><strong>Social Media Film</strong><small>Horizontal film · Watch now</small></span></button>
       <div class="video-reels">
         <button class="video-card video-card--reel" type="button" data-video-id="Tl46I3PNvvo" data-video-title="Recent Work — Reel 01" aria-label="Play Recent Work Reel 01"><img src="https://i.ytimg.com/vi/Tl46I3PNvvo/hqdefault.jpg" alt="Still from Recent Work Reel 01" loading="lazy"><span class="video-card__shade"></span><span class="video-card__play" aria-hidden="true">▶</span><span class="video-card__label"><strong>Reel 01</strong><small>Social film</small></span></button>
         <button class="video-card video-card--reel" type="button" data-video-id="E3-LU8VkHMQ" data-video-title="Recent Work — Reel 02" aria-label="Play Recent Work Reel 02"><img src="https://i.ytimg.com/vi/E3-LU8VkHMQ/hqdefault.jpg" alt="Still from Recent Work Reel 02" loading="lazy"><span class="video-card__shade"></span><span class="video-card__play" aria-hidden="true">▶</span><span class="video-card__label"><strong>Reel 02</strong><small>Social film</small></span></button>
@@ -108,7 +109,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button class="video-card video-card--reel" type="button" data-video-id="EPaqwVmZV5Y" data-video-title="Recent Work — Reel 04" aria-label="Play Recent Work Reel 04"><img src="https://i.ytimg.com/vi/EPaqwVmZV5Y/hqdefault.jpg" alt="Still from Recent Work Reel 04" loading="lazy"><span class="video-card__shade"></span><span class="video-card__play" aria-hidden="true">▶</span><span class="video-card__label"><strong>Reel 04</strong><small>Social film</small></span></button>
         <button class="video-card video-card--reel" type="button" data-video-id="g4ln4g5EH5Q" data-video-title="Recent Work — Reel 05" aria-label="Play Recent Work Reel 05"><img src="https://i.ytimg.com/vi/g4ln4g5EH5Q/hqdefault.jpg" alt="Still from Recent Work Reel 05" loading="lazy"><span class="video-card__shade"></span><span class="video-card__play" aria-hidden="true">▶</span><span class="video-card__label"><strong>Reel 05</strong><small>Social film</small></span></button>
         <button class="video-card video-card--reel" type="button" data-video-id="zCxKZrxeu0Q" data-video-title="Recent Work — Reel 06" aria-label="Play Recent Work Reel 06"><img src="https://i.ytimg.com/vi/zCxKZrxeu0Q/hqdefault.jpg" alt="Still from Recent Work Reel 06" loading="lazy"><span class="video-card__shade"></span><span class="video-card__play" aria-hidden="true">▶</span><span class="video-card__label"><strong>Reel 06</strong><small>Social film</small></span></button>
-        <button class="video-card video-card--wide" type="button" data-video-id="R8l80o-fBfE" data-video-title="Social Media Film" aria-label="Play Social Media Film"><img src="https://i.ytimg.com/vi/R8l80o-fBfE/hqdefault.jpg" alt="Still from Social Media Film" loading="lazy"><span class="video-card__shade"></span><span class="video-card__play" aria-hidden="true">▶</span><span class="video-card__label"><strong>Social Media Film</strong><small>Horizontal film · Watch now</small></span></button>
       </div>
     </div>
   </section>
@@ -193,18 +193,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- GALLERY STRIP -->
   <section class="scene wrap">
     <p class="scene__label" data-reveal>Scene — Behind the Frame</p>
-    <div class="gallery-strip" data-reveal>
-      <div class="frame" style="aspect-ratio:16/9;">
+    <div class="bts-grid" data-reveal>
+      <div class="frame bts-grid__wide" style="aspect-ratio:16/9;">
         <img src="assets/images/brand-films/on-set-bts.webp.jpg" alt="On Set" style="width:100%;height:100%;object-fit:cover;display:block;">
         <span class="frame__tag">ON SET</span>
       </div>
-      <div class="frame" style="aspect-ratio:3/4;">
-        <img src="assets/images/brand-films/on-set-bts-2.webp.jpg" alt="Camera on location" style="width:100%;height:100%;object-fit:cover;display:block;">
-        <span class="frame__tag">CAMERA ON LOCATION</span>
-      </div>
-      <div class="frame" style="aspect-ratio:3/2;">
-        <img src="assets/images/brand-films/croissant-coffee.webp.jpg" alt="Styled food campaign still" style="width:100%;height:100%;object-fit:cover;display:block;">
-        <span class="frame__tag">FOOD STYLING</span>
+      <div class="bts-grid__portraits">
+        <div class="frame" style="aspect-ratio:3/4;">
+          <img src="assets/images/brand-films/on-set-bts-2.webp.jpg" alt="Camera on location" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <span class="frame__tag">CAMERA ON LOCATION</span>
+        </div>
+        <div class="frame" style="aspect-ratio:3/4;">
+          <img src="assets/images/brand-films/bts-crew.webp.jpg" alt="Crew preparing a camera shot" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <span class="frame__tag">CREW ON SET</span>
+        </div>
       </div>
     </div>
   </section>
@@ -212,18 +214,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- EDITORIAL GALLERY -->
   <section class="scene wrap">
     <p class="scene__label" data-reveal>Scene — Campaign Stills</p>
-    <div class="gallery-editorial" data-reveal>
-      <div class="frame" style="aspect-ratio:2/3;">
-        <img src="assets/images/brand-films/chocolate-muffins.webp.jpg" alt="Chocolate muffin campaign still" style="width:100%;height:100%;object-fit:cover;display:block;">
-        <span class="frame__tag">FOOD &amp; BEVERAGE</span>
+    <div class="campaign-grid" data-reveal>
+      <div class="campaign-grid__col">
+        <div class="frame" style="aspect-ratio:2/3;">
+          <img src="assets/images/brand-films/chocolate-muffins.webp.jpg" alt="Chocolate muffin campaign still" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <span class="frame__tag">FOOD &amp; BEVERAGE</span>
+        </div>
+        <div class="frame" style="aspect-ratio:3/2;">
+          <img src="assets/images/brand-films/fries-flatlay.webp.jpg" alt="Food product flatlay" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <span class="frame__tag">PRODUCT FLATLAY</span>
+        </div>
       </div>
-      <div class="frame" style="aspect-ratio:3/2;">
-        <img src="assets/images/brand-films/fries-flatlay.webp.jpg" alt="Food product flatlay" style="width:100%;height:100%;object-fit:cover;display:block;">
-        <span class="frame__tag">PRODUCT FLATLAY</span>
-      </div>
-      <div class="frame span-rows" style="aspect-ratio:4/5;">
-        <img src="assets/images/brand-films/Post 7.jpg" alt="Chili dog social campaign image" style="width:100%;height:100%;object-fit:cover;display:block;">
-        <span class="frame__tag">SOCIAL CAMPAIGN</span>
+      <div class="campaign-grid__col">
+        <div class="frame" style="aspect-ratio:4/5;">
+          <img src="assets/images/brand-films/Post 7.jpg" alt="Chili dog social campaign image" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <span class="frame__tag">SOCIAL CAMPAIGN</span>
+        </div>
+        <div class="frame" style="aspect-ratio:3/2;">
+          <img src="assets/images/brand-films/cookies-milkshake.webp.jpg" alt="Cookies and milkshake campaign still" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <span class="frame__tag">FOOD &amp; BEVERAGE</span>
+        </div>
       </div>
     </div>
   </section>
