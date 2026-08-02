@@ -770,6 +770,8 @@ body::before{
 }
 .contact-card .meta-row:last-child{ border-bottom:none; }
 .contact-card .meta-row span:first-child{ color:var(--ink-faint); }
+.contact-card .meta-row a{ color:var(--ink); text-transform:none; letter-spacing:0; }
+.contact-card .meta-row a:hover{ color:var(--gold-text); }
 
 /* ============================================================
    FOOTER — dark teal for contrast
