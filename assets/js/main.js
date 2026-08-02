@@ -180,6 +180,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const strip = document.getElementById('reel-strip');
   if (strip) {
     let isDown = false, startX, scrollLeft;
+    let isPaused = false;
+    let reelAnimation;
+
+    const moveStrip = () => {
+      if (!isPaused && !isDown && strip.scrollWidth > strip.clientWidth) {
+        const atEnd = strip.scrollLeft >= strip.scrollWidth - strip.clientWidth - 1;
+        strip.scrollLeft = atEnd ? 0 : strip.scrollLeft + 0.35;
+      }
+      reelAnimation = requestAnimationFrame(moveStrip);
+    };
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      reelAnimation = requestAnimationFrame(moveStrip);
+    }
+
     strip.addEventListener('mousedown', e => {
       isDown = true; strip.classList.add('is-dragging');
       startX = e.pageX - strip.offsetLeft; scrollLeft = strip.scrollLeft;
@@ -190,6 +204,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!isDown) return; e.preventDefault();
       strip.scrollLeft = scrollLeft - (e.pageX - strip.offsetLeft - startX);
     });
+    strip.addEventListener('mouseenter', () => { isPaused = true; });
+    strip.addEventListener('mouseleave', () => { isPaused = false; isDown = false; strip.classList.remove('is-dragging'); });
+    strip.addEventListener('focusin', () => { isPaused = true; });
+    strip.addEventListener('focusout', () => { isPaused = false; });
+    strip.addEventListener('touchstart', () => { isPaused = true; }, { passive:true });
+    strip.addEventListener('touchend', () => { isPaused = false; }, { passive:true });
   }
 
   /* ---------- work page filters ---------- */
