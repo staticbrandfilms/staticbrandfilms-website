@@ -774,6 +774,22 @@ body::before{
 .contact-card .meta-row a:hover{ color:var(--gold-text); }
 
 /* ============================================================
+   FAQ
+   ============================================================ */
+.faq{ border-top:1px solid var(--line); }
+.faq__item{ border-bottom:1px solid var(--line); }
+.faq__item summary{
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+  padding:20px 0; cursor:pointer; list-style:none;
+  font-family:var(--f-heading); font-weight:600; font-size:18px; color:var(--ink);
+}
+.faq__item summary::-webkit-details-marker{ display:none; }
+.faq__item summary span{ color:var(--gold-text); font-family:var(--f-mono); font-size:20px; font-weight:400; }
+.faq__item[open] summary span{ transform:rotate(45deg); }
+.faq__item p{ padding:0 36px 20px 0; color:var(--ink-dim); line-height:1.72; }
+.faq__item a{ color:var(--gold-text); text-decoration:underline; text-underline-offset:3px; }
+
+/* ============================================================
    FOOTER — dark teal for contrast
    ============================================================ */
 .footer{
